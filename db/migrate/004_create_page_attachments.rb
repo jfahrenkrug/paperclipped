@@ -3,9 +3,9 @@ class CreatePageAttachments < ActiveRecord::Migration
     
     # See if a page_attachments table from the original 'page_attachments' extension already exists
     # If so, rename the table to old_page_attachments so they can be migrated later
-    if ActiveRecord::Base.connection.tables.include?('page_attachments')
-      rename_table :page_attachments, :old_page_attachments
-    end
+    #if ActiveRecord::Base.connection.tables.include?('page_attachments')
+    #  rename_table :page_attachments, :old_page_attachments
+    #end
     create_table :page_attachments do |t|
       t.column :asset_id,     :integer
       t.column :page_id,      :integer
